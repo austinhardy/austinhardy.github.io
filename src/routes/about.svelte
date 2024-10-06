@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { draw } from 'svelte/transition';
+  import headshot from '../lib/images/austin.png';
 
   let visible = false;
   let sectionRef;
@@ -52,7 +53,7 @@
       </p>
     </div>
     <img 
-      src="src/lib/images/IMG_5857.JPEG"
+      src={headshot}
       alt="Austin Hardy"
       class:visible={visible}
     />
