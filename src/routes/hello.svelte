@@ -39,6 +39,7 @@
   <div class="container">
     <h1>
       <i>Hello,</i>
+      <br class="small-screen-break">
       <span>I am</span>
       <span class="name">
         Austin!
@@ -127,5 +128,19 @@
     left: 7%;
     z-index: 100;
     transform: scaleX(1.3);
+  }
+
+  .small-screen-break {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 4rem 2rem;
+    }
+
+    .small-screen-break {
+      display: block;
+    }
   }
 </style>

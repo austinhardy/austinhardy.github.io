@@ -158,6 +158,10 @@
   }
 
   @media (max-width: 768px) {
+    .container {
+      padding: 4rem 2rem;
+    }
+
     .experience-grid {
       grid-template-columns: 1fr;
     }
