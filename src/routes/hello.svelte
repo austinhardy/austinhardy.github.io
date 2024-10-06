@@ -2,16 +2,32 @@
   import { onMount } from 'svelte';
   import { draw } from 'svelte/transition';
 
+  let sectionRef;
   let drawLine = false;
   let subtitleVisible = false;
 
   onMount(() => {
-    setTimeout(() => {
-      drawLine = true;
-    }, 500);
-    setTimeout(() => {
-      subtitleVisible = true;
-    }, 1500);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            drawLine = true;
+          }, 500);
+          setTimeout(() => {
+            subtitleVisible = true;
+          }, 1500);
+        } else {
+          drawLine = false;
+          subtitleVisible = false;
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(sectionRef);
+
+    return () => {
+      observer.unobserve(sectionRef);
+    };
   });
 
   function customFastEasing(t) {
@@ -19,7 +35,7 @@
   }
 </script>
 
-<section id="hello">
+<section id="hello" bind:this={sectionRef}>
   <div class="container">
     <h1>
       <i>Hello,</i>

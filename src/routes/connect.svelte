@@ -26,16 +26,16 @@
   }
 </script>
 
-<section id="experience" bind:this={sectionRef}>
+<section id="connect" bind:this={sectionRef}>
   <div class="container">
     <h2>Reach out if you want to create powerful, efficient, and beautifully designed software <i>together.</i></h2>
     <div class="solid-line" class:visible={visible}></div>
     <div class="social-icons">
       <a href="https://github.com/austinhardy" target="_blank">
-        <GithubIcon class="social-icon" color="var(--color-text-2)" />
+        <GithubIcon class="social-icon" />
       </a>
-      <a href="https://github.com/austinhardy" target="_blank">
-        <LinkedinIcon class="social-icon" color="var(--color-text-2)" />
+      <a href="https://www.linkedin.com/in/austin-j-hardy/" target="_blank">
+        <LinkedinIcon class="social-icon" />
       </a>
     </div>
   </div>
@@ -83,15 +83,18 @@
   .social-icons {
     display: flex;
     gap: 0.75rem;
+    margin: 1rem 0;
   }
 
   :global(.social-icon) {
     width: 2rem;
     height: 2rem;
     color: var(--color-text-2);
+    transition: color 0.1s ease, transform 0.1s ease;
 
     &:hover {
-      color: #bd8f53;
+      color: #ceccc4;
+      transform: scale(1.1);
     }
   }
 

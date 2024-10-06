@@ -25,7 +25,7 @@
   }
 </script>
 
-<section id="experience" bind:this={sectionRef}>
+<section id="about" bind:this={sectionRef}>
   <div class="container">
     <div class="content-container">
       <div class="title-container">
